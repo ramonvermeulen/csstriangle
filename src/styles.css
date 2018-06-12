@@ -1,12 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-color: #3a4a5e
+    background-color: #3a4a5e;
 }
 
-header {
-    text-align: center
-}
-
-h1 {
-    color:red
+.header-title {
+    color: #ffffff;
+    margin: 1.2rem;
 }
