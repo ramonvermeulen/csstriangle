@@ -1,0 +1,17 @@
+@font-face {
+    font-family: AlegreyaSansSC;
+    src: url(../../../assets/fonts/AlegreyaSansSC-Thin.ttf);
+}
+
+.header-title-container {
+    margin: 10px;
+}
+
+.header-title {
+    text-align: center;
+    font-family: AlegreyaSansSC;
+    line-height: 1;
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: 1000;
+}
