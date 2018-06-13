@@ -1,5 +1,7 @@
 # Csstriangle
 
+Recently bought this domain to host a project on which I will develop in the summer of 2018.
+-----
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
 
 ## Development server
