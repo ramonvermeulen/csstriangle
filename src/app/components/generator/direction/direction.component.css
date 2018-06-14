@@ -3,6 +3,11 @@
     src: url(../../../../assets/fonts/AlegreyaSansSC-Thin.ttf);
 }
 
+.custom-control-input:checked~.custom-control-label::before {
+    background-color: #b23362;
+    color: inherit;
+}
+
 .direction-container {
     margin: 10px 20px 10px 20px;
     font-family: AlegreyaSansSC!important;;
@@ -18,6 +23,7 @@
     width: 0;
     height: 0;
     border-style: solid;
+    vertical-align: middle;
 }
 
 .triangle.top {

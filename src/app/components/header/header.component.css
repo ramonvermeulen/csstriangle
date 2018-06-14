@@ -14,4 +14,23 @@
     margin: 0;
     font-size: 3.5rem;
     font-weight: 1000;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.header-subtitle {
+    text-align: center;
+    font-family: AlegreyaSansSC, 'Courier New', Courier, monospace;
+    line-height: 1;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 1000;
+    color: #ffffff;
+    margin: 10px;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 }
