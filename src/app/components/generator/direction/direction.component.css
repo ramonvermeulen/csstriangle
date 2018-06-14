@@ -1,0 +1,61 @@
+@font-face {
+    font-family: AlegreyaSansSC;
+    src: url(../../../../assets/fonts/AlegreyaSansSC-Thin.ttf);
+}
+
+.direction-container {
+    margin: 10px 20px 10px 20px;
+    font-family: AlegreyaSansSC!important;;
+    color: white;
+}
+
+.direction-title {
+    font-weight: 1000;
+}
+
+.triangle {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.triangle.top {
+    border-width: 0 10px 17.3px 10px;
+    border-color: transparent transparent #ffffff transparent;
+}
+
+.triangle.bottom {
+    border-width: 17.3px 10px 0 10px;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+.triangle.left {
+    border-width: 10px 0 10px 17.3px;
+    border-color: transparent transparent transparent #ffffff;
+}
+
+.triangle.right {
+    border-width: 10px 17.3px 10px 0;
+    border-color: transparent #ffffff transparent transparent;
+}
+
+.triangle.top-left {
+    border-width: 20px 20px 0 0;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+.triangle.top-right {
+    border-width: 20px 0 0 20px;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+.triangle.bottom-left {
+    border-width: 0 20px 20px 0;
+    border-color: transparent transparent #ffffff transparent;
+}
+
+.triangle.bottom-right {
+    border-width: 0 0 20px 20px;
+    border-color: transparent transparent #ffffff transparent;
+}

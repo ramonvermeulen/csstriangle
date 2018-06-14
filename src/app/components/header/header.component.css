@@ -9,7 +9,7 @@
 
 .header-title {
     text-align: center;
-    font-family: AlegreyaSansSC;
+    font-family: AlegreyaSansSC, 'Courier New', Courier, monospace;
     line-height: 1;
     margin: 0;
     font-size: 3.5rem;
