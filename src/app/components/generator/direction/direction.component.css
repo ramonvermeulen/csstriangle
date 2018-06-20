@@ -3,11 +3,6 @@
     src: url(../../../../assets/fonts/AlegreyaSansSC-Thin.ttf);
 }
 
-.custom-control-input:checked~.custom-control-label::before {
-    background-color: #b23362;
-    color: inherit;
-}
-
 .direction-container {
     margin: 10px 20px 10px 20px;
     font-family: AlegreyaSansSC!important;;
@@ -64,4 +59,15 @@
 .triangle.bottom-right {
     border-width: 0 0 20px 20px;
     border-color: transparent transparent #ffffff transparent;
+}
+
+.custom-radio {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.custom-radio label {
+    cursor: pointer;
 }

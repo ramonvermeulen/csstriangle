@@ -1,61 +1,59 @@
 <div class="direction-container">
     <h4 class="direction-title">Direction</h4>
     <div class="custom-control custom-radio">
-        <input type="radio" value="top" id="top" class="custom-control-input" name="direction" [(ngModel)]="direction">
+        <input type="radio" value="top" id="top" class="custom-control-input" name="direction" [(ngModel)]="direction" (ngModelChange)="onDirectionChange($event)">
         <label class="custom-control-label" for="top">
             <span class="triangle top"></span>
             Top
         </label>
     </div>
     <div class="custom-control custom-radio">
-        <input type="radio" value="bottom" id="bottom" class="custom-control-input" name="direction" [(ngModel)]="direction">
+        <input type="radio" value="bottom" id="bottom" class="custom-control-input" name="direction" [(ngModel)]="direction" (ngModelChange)="onDirectionChange($event)">
         <label class="custom-control-label" for="bottom">
             <span class="triangle bottom"></span>
             Bottom
         </label>
     </div>
     <div class="custom-control custom-radio">
-        <input type="radio" value="left" id="left" class="custom-control-input" name="direction" [(ngModel)]="direction">
+        <input type="radio" value="left" id="left" class="custom-control-input" name="direction" [(ngModel)]="direction" (ngModelChange)="onDirectionChange($event)">
         <label class="custom-control-label" for="left">
                 <span class="triangle left"></span>
                 Left
         </label>
     </div>
     <div class="custom-control custom-radio">
-        <input type="radio" value="right" id="right" class="custom-control-input" name="direction" [(ngModel)]="direction">
+        <input type="radio" value="right" id="right" class="custom-control-input" name="direction" [(ngModel)]="direction" (ngModelChange)="onDirectionChange($event)">
         <label class="custom-control-label" for="right">
             <span class="triangle right"></span>
             Right
         </label>
     </div>
     <div class="custom-control custom-radio">
-        <input type="radio" value="top-left" id="top-left" class="custom-control-input" name="direction" [(ngModel)]="direction">
+        <input type="radio" value="top-left" id="top-left" class="custom-control-input" name="direction" [(ngModel)]="direction" (ngModelChange)="onDirectionChange($event)">
         <label class="custom-control-label" for="top-left">
             <span class="triangle top-left"></span>
             Top-left
         </label>
     </div>
     <div class="custom-control custom-radio">
-        <input type="radio" value="top-right" id="top-right" class="custom-control-input" name="direction" [(ngModel)]="direction">
+        <input type="radio" value="top-right" id="top-right" class="custom-control-input" name="direction" [(ngModel)]="direction" (ngModelChange)="onDirectionChange($event)">
         <label class="custom-control-label" for="top-right">
             <span class="triangle top-right"></span>
             Top-right
         </label>
     </div>
     <div class="custom-control custom-radio">
-        <input type="radio" value="bottom-left" id="bottom-left" class="custom-control-input" name="direction" [(ngModel)]="direction">
+        <input type="radio" value="bottom-left" id="bottom-left" class="custom-control-input" name="direction" [(ngModel)]="direction" (ngModelChange)="onDirectionChange($event)">
         <label class="custom-control-label" for="bottom-left">
             <span class="triangle bottom-left"></span>
             Bottom-left
         </label>
     </div>
     <div class="custom-control custom-radio">
-        <input type="radio" value="bottom-right" id="bottom-right" class="custom-control-input" name="direction" [(ngModel)]="direction">
+        <input type="radio" value="bottom-right" id="bottom-right" class="custom-control-input" name="direction" [(ngModel)]="direction" (ngModelChange)="onDirectionChange($event)">
         <label class="custom-control-label" for="bottom-right">
             <span class="triangle bottom-right"></span>
             Bottom-right
         </label>
     </div>
 </div>
-
-{{direction}}

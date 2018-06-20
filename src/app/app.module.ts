@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { GeneratorComponent } from './components/generator/generator.component';
 import { DirectionComponent } from './components/generator/direction/direction.component';
+import { TypeComponent } from './components/generator/type/type.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     GeneratorComponent,
-    DirectionComponent
+    DirectionComponent,
+    TypeComponent
   ],
   imports: [
     BrowserModule,
