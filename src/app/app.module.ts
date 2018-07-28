@@ -9,6 +9,10 @@ import { DirectionComponent } from './components/generator/direction/direction.c
 import { TypeComponent } from './components/generator/type/type.component';
 import { DimensionsComponent } from './components/generator/dimensions/dimensions.component';
 
+/* external library imports */
+import { ColorPickerModule } from 'ngx-color-picker';
+import { ColorComponent } from './components/generator/color/color.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,11 +20,13 @@ import { DimensionsComponent } from './components/generator/dimensions/dimension
     GeneratorComponent,
     DirectionComponent,
     TypeComponent,
-    DimensionsComponent
+    DimensionsComponent,
+    ColorComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ColorPickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

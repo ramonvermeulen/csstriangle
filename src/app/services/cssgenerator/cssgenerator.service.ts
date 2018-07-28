@@ -16,6 +16,8 @@ export class CssGeneratorService {
     private topInstance = new BehaviorSubject<number>(50);
     private bottomInstance = new BehaviorSubject<number>(50);
 
+    private colorInstance = new BehaviorSubject<string>("#ff0000")
+
     direction = this.directionInstance.asObservable();
     type = this.typeInstance.asObservable();
 
@@ -25,6 +27,8 @@ export class CssGeneratorService {
     right = this.rightInstance.asObservable();
     top = this.topInstance.asObservable();
     bottom = this.bottomInstance.asObservable();
+
+    color = this.colorInstance.asObservable();
 
     constructor() { }
 
@@ -58,6 +62,10 @@ export class CssGeneratorService {
 
     changeBottomInstance(bottom: number) {
         this.bottomInstance.next(bottom)
+    }
+
+    changeColorInstance(color: string) {
+        this.colorInstance.next(color)
     }
 
 }
