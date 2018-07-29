@@ -13,4 +13,5 @@
     width: 0;
     height: 0;
     border-style: solid;
+    transition: 500ms;
 }

@@ -32,13 +32,13 @@
 }
 
 .triangle.left {
-    border-width: 10px 0 10px 17.3px;
-    border-color: transparent transparent transparent #ffffff;
+    border-width: 10px 17.3px 10px 0;
+    border-color: transparent #ffffff transparent transparent;
 }
 
 .triangle.right {
-    border-width: 10px 17.3px 10px 0;
-    border-color: transparent #ffffff transparent transparent;
+    border-width: 10px 0 10px 17.3px;
+    border-color: transparent transparent transparent #ffffff;
 }
 
 .triangle.top-left {

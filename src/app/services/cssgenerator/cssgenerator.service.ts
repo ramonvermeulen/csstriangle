@@ -7,10 +7,10 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 export class CssGeneratorService {
     private directionInstance = new BehaviorSubject<string>("top");
     private typeInstance = new BehaviorSubject<string>("equilateral");
-    private widthInstance = new BehaviorSubject<number>(200);
-    private heightInstance = new BehaviorSubject<number>(100);
-    private leftInstance = new BehaviorSubject<number>(100);
-    private rightInstance = new BehaviorSubject<number>(100);
+    private widthInstance = new BehaviorSubject<number>(150);
+    private heightInstance = new BehaviorSubject<number>(75);
+    private leftInstance = new BehaviorSubject<number>(75);
+    private rightInstance = new BehaviorSubject<number>(75);
     private topInstance = new BehaviorSubject<number>(50);
     private bottomInstance = new BehaviorSubject<number>(50);
     private colorInstance = new BehaviorSubject<string>("#ff0000")
@@ -89,10 +89,65 @@ export class CssGeneratorService {
     updateBorderWidth() {
         switch(this.typeInstance.getValue()) {
             case "equilateral": {
-                let top = 0;
-                let right = (this.widthInstance.getValue() / 2).toFixed(1)
-                let left = (this.widthInstance.getValue() / 2).toFixed(1)
-                let bottom = (Math.sqrt(3)/2 * this.widthInstance.getValue()).toFixed(1)
+                var top, right, bottom, left;
+                switch(this.directionInstance.getValue()){
+                    case "top": {
+                        top = 0;
+                        right = (this.widthInstance.getValue() / 2).toFixed(1);
+                        bottom = (Math.sqrt(3)/2 * this.widthInstance.getValue()).toFixed(1);
+                        left = (this.widthInstance.getValue() / 2).toFixed(1);
+                        break;
+                    }
+                    case "bottom": {
+                        top = (Math.sqrt(3)/2 * this.widthInstance.getValue()).toFixed(1);
+                        right = (this.widthInstance.getValue() / 2).toFixed(1);
+                        bottom = 0;
+                        left = (this.widthInstance.getValue() / 2).toFixed(1);
+                        break;
+                    }
+                    case "left": {
+                        top = (this.widthInstance.getValue() / 2).toFixed(1);
+                        right = (this.widthInstance.getValue()).toFixed(1);
+                        bottom = (this.widthInstance.getValue() / 2).toFixed(1);
+                        left = 0;
+                        break;
+                    }
+                    case "right": {
+                        top = (this.widthInstance.getValue() / 2).toFixed(1);
+                        right = 0
+                        bottom = (this.widthInstance.getValue() / 2).toFixed(1);
+                        left = (this.widthInstance.getValue()).toFixed(1);
+                        break;
+                    }
+                    case "top-right": {
+                        top = 0;
+                        right = (this.widthInstance.getValue()).toFixed(1);
+                        bottom = (this.widthInstance.getValue()).toFixed(1);
+                        left = 0;
+                        break;
+                    }
+                    case "top-left": {
+                        top = (this.widthInstance.getValue()).toFixed(1);
+                        right = (this.widthInstance.getValue()).toFixed(1);
+                        bottom = 0;
+                        left = 0;
+                        break;
+                    }
+                    case "bottom-left": {
+                        top = (this.widthInstance.getValue()).toFixed(1);
+                        right = 0;
+                        bottom = 0;
+                        left = (this.widthInstance.getValue()).toFixed(1);
+                        break;
+                    }
+                    case "bottom-right": {
+                        top = 0;
+                        right = 0;
+                        bottom = (this.widthInstance.getValue()).toFixed(1);
+                        left = (this.widthInstance.getValue()).toFixed(1);
+                        break;
+                    }
+                }
                 this.borderWidthInstance.next(`${top}px ${right}px ${bottom}px ${left}px`)
             }
         }
@@ -101,7 +156,40 @@ export class CssGeneratorService {
     updateBorderColor() {
         switch(this.typeInstance.getValue()) {
             case "equilateral": {
-                this.borderColorInstance.next(`transparent transparent ${this.colorInstance.getValue()} transparent`)
+                switch(this.directionInstance.getValue()){
+                    case "top": {
+                        this.borderColorInstance.next(`transparent transparent ${this.colorInstance.getValue()} transparent`)
+                        break;
+                    }
+                    case "bottom": {
+                        this.borderColorInstance.next(`${this.colorInstance.getValue()} transparent transparent transparent`)
+                        break;
+                    }
+                    case "left": {
+                        this.borderColorInstance.next(`transparent ${this.colorInstance.getValue()} transparent transparent`)
+                        break;
+                    }
+                    case "right": {
+                        this.borderColorInstance.next(`transparent transparent transparent ${this.colorInstance.getValue()}`)
+                        break;
+                    }
+                    case "top-right": {
+                        this.borderColorInstance.next(`transparent ${this.colorInstance.getValue()} transparent transparent`)
+                        break;
+                    }
+                    case "top-left": {
+                        this.borderColorInstance.next(`${this.colorInstance.getValue()} transparent transparent transparent`)
+                        break;
+                    }
+                    case "bottom-left": {
+                        this.borderColorInstance.next(`transparent transparent transparent ${this.colorInstance.getValue()}`)
+                        break;
+                    }
+                    case "bottom-right": {
+                        this.borderColorInstance.next(`transparent transparent ${this.colorInstance.getValue()} transparent`)
+                        break;
+                    }
+                }
             }
         }
     }
