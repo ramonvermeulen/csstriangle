@@ -12,6 +12,7 @@ import { DimensionsComponent } from './components/generator/dimensions/dimension
 /* external library imports */
 import { ColorPickerModule } from 'ngx-color-picker';
 import { ColorComponent } from './components/generator/color/color.component';
+import { VisualPreviewComponent } from './components/generator/visual-preview/visual-preview.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ColorComponent } from './components/generator/color/color.component';
     DirectionComponent,
     TypeComponent,
     DimensionsComponent,
-    ColorComponent
+    ColorComponent,
+    VisualPreviewComponent
   ],
   imports: [
     BrowserModule,
