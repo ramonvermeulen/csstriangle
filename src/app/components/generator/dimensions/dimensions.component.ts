@@ -30,6 +30,22 @@ export class DimensionsComponent implements OnInit {
     this.cssGenerator.bottom.subscribe(bottom => this.bottom = bottom)
   }
 
+  onWidthChange() {
+    this.cssGenerator.changeWidthInstance(this.width)
+  }
+
+  onHeightChange() {
+    this.cssGenerator.changeHeightInstance(this.height)
+  }
+
+  onLeftChange() {
+    this.cssGenerator.changeLeftInstance(this.left)
+  }
+
+  onRightChange() {
+    this.cssGenerator.changeRightInstance(this.right)
+  }
+
   getWidthDisabled() {
     if (this.type == 'scalene') {
       return false;

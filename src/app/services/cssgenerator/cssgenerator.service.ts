@@ -17,7 +17,7 @@ export class CssGeneratorService {
 
     /* generated instances */
     private borderWidthInstance = new BehaviorSubject<string>("0 100px 173.3px 100px")
-    private borderColorInstance = new BehaviorSubject<string>("transparent transparent #6980fe transparent")
+    private borderColorInstance = new BehaviorSubject<string>("transparent transparent #ff0000 transparent")
 
 
     direction = this.directionInstance.asObservable();
@@ -38,38 +38,71 @@ export class CssGeneratorService {
 
     changeDirectionInstance(direction: string) {
         this.directionInstance.next(direction)
+        this.updateAll()
     }
 
     changeTypeInstance(type: string) {
         this.typeInstance.next(type)
+        this.updateAll()
     }
 
     changeWidthInstance(width: number) {
         this.widthInstance.next(width)
+        this.updateAll()
     }
 
     changeHeightInstance(height: number) {
         this.heightInstance.next(height)
+        this.updateAll()
     }
 
     changeLeftInstance(left: number) {
         this.leftInstance.next(left)
+        this.updateAll()
     }
 
     changeRightInstance(right: number) {
         this.rightInstance.next(right)
+        this.updateAll()
     }
 
     changeTopInstance(top: number) {
         this.topInstance.next(top)
+        this.updateAll()
     }
 
     changeBottomInstance(bottom: number) {
         this.bottomInstance.next(bottom)
+        this.updateAll()
     }
 
     changeColorInstance(color: string) {
         this.colorInstance.next(color)
+        this.updateAll()
     }
 
+    updateAll() {
+        this.updateBorderWidth()
+        this.updateBorderColor() 
+    }
+
+    updateBorderWidth() {
+        switch(this.typeInstance.getValue()) {
+            case "equilateral": {
+                let top = 0;
+                let right = (this.widthInstance.getValue() / 2).toFixed(1)
+                let left = (this.widthInstance.getValue() / 2).toFixed(1)
+                let bottom = (Math.sqrt(3)/2 * this.widthInstance.getValue()).toFixed(1)
+                this.borderWidthInstance.next(`${top}px ${right}px ${bottom}px ${left}px`)
+            }
+        }
+    }
+
+    updateBorderColor() {
+        switch(this.typeInstance.getValue()) {
+            case "equilateral": {
+                this.borderColorInstance.next(`transparent transparent ${this.colorInstance.getValue()} transparent`)
+            }
+        }
+    }
 }

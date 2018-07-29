@@ -1,9 +1,10 @@
 .visual-preview-container {
+    margin: 0px 10px 0px 10px;
     display: block;
     background: url(../../../../assets/img/transparent.png) 0 0 repeat;
     padding: 30px;
-    width: 400px;
-    height: 200px;
+    width: auto;
+    height: auto;
 }
 
 .triangle {
@@ -12,5 +13,4 @@
     width: 0;
     height: 0;
     border-style: solid;
-    transition: 0.3s;
 }
