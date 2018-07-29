@@ -13,6 +13,7 @@ import { DimensionsComponent } from './components/generator/dimensions/dimension
 import { ColorPickerModule } from 'ngx-color-picker';
 import { ColorComponent } from './components/generator/color/color.component';
 import { VisualPreviewComponent } from './components/generator/visual-preview/visual-preview.component';
+import { CodePreviewComponent } from './components/generator/code-preview/code-preview.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { VisualPreviewComponent } from './components/generator/visual-preview/vi
     TypeComponent,
     DimensionsComponent,
     ColorComponent,
-    VisualPreviewComponent
+    VisualPreviewComponent,
+    CodePreviewComponent
   ],
   imports: [
     BrowserModule,

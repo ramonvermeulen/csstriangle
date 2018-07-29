@@ -13,11 +13,11 @@ export class CssGeneratorService {
     private rightInstance = new BehaviorSubject<number>(75);
     private topInstance = new BehaviorSubject<number>(50);
     private bottomInstance = new BehaviorSubject<number>(50);
-    private colorInstance = new BehaviorSubject<string>("#ff0000")
+    private colorInstance = new BehaviorSubject<string>("#b42157")
 
     /* generated instances */
-    private borderWidthInstance = new BehaviorSubject<string>("0 100px 173.3px 100px")
-    private borderColorInstance = new BehaviorSubject<string>("transparent transparent #ff0000 transparent")
+    private borderWidthInstance = new BehaviorSubject<string>("0 75px 129.9px 75px")
+    private borderColorInstance = new BehaviorSubject<string>("transparent transparent #b42157 transparent")
 
 
     direction = this.directionInstance.asObservable();
