@@ -119,6 +119,105 @@ export class CssGeneratorService {
                         left = (this.widthInstance.getValue()).toFixed(1);
                         break;
                     }
+                }
+                this.borderWidthInstance.next(`${top}px ${right}px ${bottom}px ${left}px`)
+            }
+            case "isosceles": {
+                var top, right, bottom, left
+                switch(this.directionInstance.getValue()){
+                    // TODO look into this code --! not functioning how it should
+                    case "top": {
+                        console.log('hoi')
+                        top = 0;
+                        right = (this.widthInstance.getValue() / 2).toFixed(1);
+                        bottom = this.heightInstance.getValue().toFixed(1)
+                        left = (this.widthInstance.getValue() / 2).toFixed(1);
+                        break;
+                    }
+                    case "bottom": {
+                        top = (Math.sqrt(3)/2 * this.widthInstance.getValue()).toFixed(1);
+                        right = (this.widthInstance.getValue() / 2).toFixed(1);
+                        bottom = 0;
+                        left = (this.widthInstance.getValue() / 2).toFixed(1);
+                        break;
+                    }
+                    case "left": {
+                        top = (this.widthInstance.getValue() / 2).toFixed(1);
+                        right = (this.widthInstance.getValue()).toFixed(1);
+                        bottom = (this.widthInstance.getValue() / 2).toFixed(1);
+                        left = 0;
+                        break;
+                    }
+                    case "right": {
+                        top = (this.widthInstance.getValue() / 2).toFixed(1);
+                        right = 0
+                        bottom = (this.widthInstance.getValue() / 2).toFixed(1);
+                        left = (this.widthInstance.getValue()).toFixed(1);
+                        break;
+                    }
+                    case "top-right": {
+                        top = 0;
+                        right = (this.widthInstance.getValue()).toFixed(1);
+                        bottom = (this.widthInstance.getValue()).toFixed(1);
+                        left = 0;
+                        break;
+                    }
+                    case "top-left": {
+                        top = (this.widthInstance.getValue()).toFixed(1);
+                        right = (this.widthInstance.getValue()).toFixed(1);
+                        bottom = 0;
+                        left = 0;
+                        break;
+                    }
+                    case "bottom-left": {
+                        top = (this.widthInstance.getValue()).toFixed(1);
+                        right = 0;
+                        bottom = 0;
+                        left = (this.widthInstance.getValue()).toFixed(1);
+                        break;
+                    }
+                    case "bottom-right": {
+                        top = 0;
+                        right = 0;
+                        bottom = (this.widthInstance.getValue()).toFixed(1);
+                        left = (this.widthInstance.getValue()).toFixed(1);
+                        break;
+                    }
+                }
+                this.borderWidthInstance.next(`${top}px ${right}px ${bottom}px ${left}px`)
+            }
+            case "scalane": {
+                var top, right, bottom, left
+                switch(this.directionInstance.getValue()){
+                    // TODO look into this code
+                    case "top": {
+                        top = 0;
+                        right = (this.widthInstance.getValue() / 2).toFixed(1);
+                        bottom = (Math.sqrt(3)/2 * this.widthInstance.getValue()).toFixed(1);
+                        left = (this.widthInstance.getValue() / 2).toFixed(1);
+                        break;
+                    }
+                    case "bottom": {
+                        top = (Math.sqrt(3)/2 * this.widthInstance.getValue()).toFixed(1);
+                        right = (this.widthInstance.getValue() / 2).toFixed(1);
+                        bottom = 0;
+                        left = (this.widthInstance.getValue() / 2).toFixed(1);
+                        break;
+                    }
+                    case "left": {
+                        top = (this.widthInstance.getValue() / 2).toFixed(1);
+                        right = (this.widthInstance.getValue()).toFixed(1);
+                        bottom = (this.widthInstance.getValue() / 2).toFixed(1);
+                        left = 0;
+                        break;
+                    }
+                    case "right": {
+                        top = (this.widthInstance.getValue() / 2).toFixed(1);
+                        right = 0
+                        bottom = (this.widthInstance.getValue() / 2).toFixed(1);
+                        left = (this.widthInstance.getValue()).toFixed(1);
+                        break;
+                    }
                     case "top-right": {
                         top = 0;
                         right = (this.widthInstance.getValue()).toFixed(1);

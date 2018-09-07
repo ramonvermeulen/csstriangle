@@ -1,6 +1,6 @@
 <div class="type-container">
     <h4 class="type-title">Type</h4>
-    <div class="custom-control custom-radio">
+    <div class="custom-control custom-radio" *ngIf="isEquilateralEnabled()">
         <input type="radio" value="equilateral" id="equilateral" class="custom-control-input" name="type" [(ngModel)]="type" (ngModelChange)="onTypeChange($event)">
         <label class="custom-control-label" for="equilateral">
             Equilateral

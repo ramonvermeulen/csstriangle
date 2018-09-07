@@ -12,7 +12,7 @@ export class DirectionComponent implements OnInit {
     constructor(private cssGenerator: CssGeneratorService) { }
 
     ngOnInit() {
-        this.cssGenerator.direction.subscribe(direction => this.direction = direction)
+        this.cssGenerator.direction.subscribe(direction => this.direction = direction)   
     }
 
     onDirectionChange() {
