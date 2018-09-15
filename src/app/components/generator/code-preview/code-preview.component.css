@@ -12,3 +12,9 @@
 .code-preview-title {
     font-weight: 1000;
 }
+
+.code-preview {
+    padding: 25px;
+    font-weight: bold;
+    font-size: 16px;
+}
