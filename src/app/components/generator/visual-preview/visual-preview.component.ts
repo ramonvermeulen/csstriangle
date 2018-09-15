@@ -9,7 +9,6 @@ import { CssGeneratorService } from '../../../services/cssgenerator/cssgenerator
 export class VisualPreviewComponent implements OnInit {
   private borderWidth: string;
   private borderColor: string;
-  private triangleStyles: { [id: string] : string } = {};
 
   constructor(private cssGenerator: CssGeneratorService) { }
 
@@ -24,7 +23,6 @@ export class VisualPreviewComponent implements OnInit {
       'border-color': this.borderColor,
       'border-width': this.borderWidth
     }
-    console.log(styles)
     return styles;
   }
 

@@ -83,7 +83,8 @@ export class CssGeneratorService {
 
     updateAll() {
         this.updateBorderWidth()
-        this.updateBorderColor() 
+        this.updateBorderColor()
+        this.updateCssOutput()
     }
 
     updateBorderWidth() {
@@ -155,10 +156,9 @@ export class CssGeneratorService {
                         break;
                     }
                     case "top-right": {
-                        // TODO LOOK INTO DIFFERENT COMBINATIONS
                         top = 0;
-                        right = (this.heightInstance.getValue()).toFixed(1);
-                        bottom = (this.widthInstance.getValue()).toFixed(1);
+                        right = (this.widthInstance.getValue()).toFixed(1);
+                        bottom = (this.heightInstance.getValue()).toFixed(1);
                         left = 0;
                         break;
                     }
@@ -170,71 +170,70 @@ export class CssGeneratorService {
                         break;
                     }
                     case "bottom-left": {
-                        top = (this.widthInstance.getValue()).toFixed(1);
+                        top = (this.heightInstance.getValue()).toFixed(1);
                         right = 0;
                         bottom = 0;
-                        left = (this.heightInstance.getValue()).toFixed(1);
+                        left = (this.widthInstance.getValue()).toFixed(1);
                         break;
                     }
                     case "bottom-right": {
                         top = 0;
                         right = 0;
-                        bottom = (this.widthInstance.getValue()).toFixed(1);
-                        left = (this.heightInstance.getValue()).toFixed(1);
+                        bottom = (this.heightInstance.getValue()).toFixed(1);
+                        left = (this.widthInstance.getValue()).toFixed(1);
                         break;
                     }
                 }
                 this.borderWidthInstance.next(`${top}px ${right}px ${bottom}px ${left}px`)
                 break;
             }
-            case "scalane": {
+            case "scalene": {
                 var top, right, bottom, left
                 switch(this.directionInstance.getValue()){
-                    // TODO look into this code
                     case "top": {
                         top = 0;
-                        right = (this.widthInstance.getValue() / 2).toFixed(1);
-                        bottom = (Math.sqrt(3)/2 * this.widthInstance.getValue()).toFixed(1);
-                        left = (this.widthInstance.getValue() / 2).toFixed(1);
+                        right = (this.rightInstance.getValue()).toFixed(1);
+                        bottom = (this.heightInstance.getValue()).toFixed(1);
+                        left = (this.leftInstance.getValue()).toFixed(1);
                         break;
                     }
                     case "bottom": {
-                        top = (Math.sqrt(3)/2 * this.widthInstance.getValue()).toFixed(1);
-                        right = (this.widthInstance.getValue() / 2).toFixed(1);
+                        top = (this.heightInstance.getValue()).toFixed(1);
+                        right = (this.rightInstance.getValue()).toFixed(1);
                         bottom = 0;
-                        left = (this.widthInstance.getValue() / 2).toFixed(1);
+                        left = (this.leftInstance.getValue()).toFixed(1);
                         break;
                     }
                     case "left": {
-                        top = (this.widthInstance.getValue() / 2).toFixed(1);
+                        top = (this.topInstance.getValue()).toFixed(1);
                         right = (this.widthInstance.getValue()).toFixed(1);
-                        bottom = (this.widthInstance.getValue() / 2).toFixed(1);
+                        bottom = (this.bottomInstance.getValue()).toFixed(1);
                         left = 0;
                         break;
                     }
                     case "right": {
-                        top = (this.widthInstance.getValue() / 2).toFixed(1);
+                        top = (this.topInstance.getValue()).toFixed(1);
                         right = 0
-                        bottom = (this.widthInstance.getValue() / 2).toFixed(1);
+                        bottom = (this.bottomInstance.getValue()).toFixed(1);
                         left = (this.widthInstance.getValue()).toFixed(1);
                         break;
                     }
                     case "top-right": {
                         top = 0;
                         right = (this.widthInstance.getValue()).toFixed(1);
-                        bottom = (this.widthInstance.getValue()).toFixed(1);
+                        bottom = (this.heightInstance.getValue()).toFixed(1);
                         left = 0;
                         break;
                     }
                     case "top-left": {
-                        top = (this.widthInstance.getValue()).toFixed(1);
+                        top = (this.heightInstance.getValue()).toFixed(1);
                         right = (this.widthInstance.getValue()).toFixed(1);
                         bottom = 0;
                         left = 0;
                         break;
                     }
                     case "bottom-left": {
-                        top = (this.widthInstance.getValue()).toFixed(1);
+                        top = (this.heightInstance.getValue()).toFixed(1);
                         right = 0;
                         bottom = 0;
                         left = (this.widthInstance.getValue()).toFixed(1);
@@ -243,7 +242,7 @@ export class CssGeneratorService {
                     case "bottom-right": {
                         top = 0;
                         right = 0;
-                        bottom = (this.widthInstance.getValue()).toFixed(1);
+                        bottom = (this.heightInstance.getValue()).toFixed(1);
                         left = (this.widthInstance.getValue()).toFixed(1);
                         break;
                     }
@@ -255,99 +254,44 @@ export class CssGeneratorService {
     }
 
     updateBorderColor() {
-        switch(this.typeInstance.getValue()) {
-            case "equilateral": {
-                switch(this.directionInstance.getValue()){
-                    case "top": {
-                        this.borderColorInstance.next(`transparent transparent ${this.colorInstance.getValue()} transparent`)
-                        break;
-                    }
-                    case "bottom": {
-                        this.borderColorInstance.next(`${this.colorInstance.getValue()} transparent transparent transparent`)
-                        break;
-                    }
-                    case "left": {
-                        this.borderColorInstance.next(`transparent ${this.colorInstance.getValue()} transparent transparent`)
-                        break;
-                    }
-                    case "right": {
-                        this.borderColorInstance.next(`transparent transparent transparent ${this.colorInstance.getValue()}`)
-                        break;
-                    }
-                }
+        switch(this.directionInstance.getValue()){
+            case "top": {
+                this.borderColorInstance.next(`transparent transparent ${this.colorInstance.getValue()} transparent`)
+                break;
             }
-            case "isosceles": {
-                switch(this.directionInstance.getValue()){
-                    case "top": {
-                        this.borderColorInstance.next(`transparent transparent ${this.colorInstance.getValue()} transparent`)
-                        break;
-                    }
-                    case "bottom": {
-                        this.borderColorInstance.next(`${this.colorInstance.getValue()} transparent transparent transparent`)
-                        break;
-                    }
-                    case "left": {
-                        this.borderColorInstance.next(`transparent ${this.colorInstance.getValue()} transparent transparent`)
-                        break;
-                    }
-                    case "right": {
-                        this.borderColorInstance.next(`transparent transparent transparent ${this.colorInstance.getValue()}`)
-                        break;
-                    }
-                    case "top-right": {
-                        this.borderColorInstance.next(`transparent ${this.colorInstance.getValue()} transparent transparent`)
-                        break;
-                    }
-                    case "top-left": {
-                        this.borderColorInstance.next(`${this.colorInstance.getValue()} transparent transparent transparent`)
-                        break;
-                    }
-                    case "bottom-left": {
-                        this.borderColorInstance.next(`transparent transparent transparent ${this.colorInstance.getValue()}`)
-                        break;
-                    }
-                    case "bottom-right": {
-                        this.borderColorInstance.next(`transparent transparent ${this.colorInstance.getValue()} transparent`)
-                        break;
-                    }
-                }
+            case "bottom": {
+                this.borderColorInstance.next(`${this.colorInstance.getValue()} transparent transparent transparent`)
+                break;
             }
-            case "scalane": {
-                switch(this.directionInstance.getValue()){
-                    case "top": {
-                        this.borderColorInstance.next(`transparent transparent ${this.colorInstance.getValue()} transparent`)
-                        break;
-                    }
-                    case "bottom": {
-                        this.borderColorInstance.next(`${this.colorInstance.getValue()} transparent transparent transparent`)
-                        break;
-                    }
-                    case "left": {
-                        this.borderColorInstance.next(`transparent ${this.colorInstance.getValue()} transparent transparent`)
-                        break;
-                    }
-                    case "right": {
-                        this.borderColorInstance.next(`transparent transparent transparent ${this.colorInstance.getValue()}`)
-                        break;
-                    }
-                    case "top-right": {
-                        this.borderColorInstance.next(`transparent ${this.colorInstance.getValue()} transparent transparent`)
-                        break;
-                    }
-                    case "top-left": {
-                        this.borderColorInstance.next(`${this.colorInstance.getValue()} transparent transparent transparent`)
-                        break;
-                    }
-                    case "bottom-left": {
-                        this.borderColorInstance.next(`transparent transparent transparent ${this.colorInstance.getValue()}`)
-                        break;
-                    }
-                    case "bottom-right": {
-                        this.borderColorInstance.next(`transparent transparent ${this.colorInstance.getValue()} transparent`)
-                        break;
-                    }
-                }
+            case "left": {
+                this.borderColorInstance.next(`transparent ${this.colorInstance.getValue()} transparent transparent`)
+                break;
+            }
+            case "right": {
+                this.borderColorInstance.next(`transparent transparent transparent ${this.colorInstance.getValue()}`)
+                break;
+            }
+            case "top-right": {
+                this.borderColorInstance.next(`transparent ${this.colorInstance.getValue()} transparent transparent`)
+                break;
+            }
+            case "top-left": {
+                this.borderColorInstance.next(`${this.colorInstance.getValue()} transparent transparent transparent`)
+                break;
+            }
+            case "bottom-left": {
+                this.borderColorInstance.next(`transparent transparent transparent ${this.colorInstance.getValue()}`)
+                break;
+            }
+            case "bottom-right": {
+                this.borderColorInstance.next(`transparent transparent ${this.colorInstance.getValue()} transparent`)
+                break;
             }
         }
     }
+
+    updateCssOutput() {
+        return;
+    }
 }
+

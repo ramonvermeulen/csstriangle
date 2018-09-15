@@ -8,6 +8,7 @@ import { CssGeneratorService } from '../../../services/cssgenerator/cssgenerator
 })
 export class DimensionsComponent implements OnInit {
   private type: string;
+  private direction: string;
 
   private width: number;
   private height: number;
@@ -16,11 +17,15 @@ export class DimensionsComponent implements OnInit {
   private top: number;
   private bottom: number;
 
+  private topDirections: Array<string> = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
+  private leftRightDirections: Array<string> = ['left', 'right'];
+
 
   constructor(private cssGenerator: CssGeneratorService) { }
 
   ngOnInit() {
     this.cssGenerator.type.subscribe(type => this.type = type)
+    this.cssGenerator.direction.subscribe(direction => this.direction = direction)
 
     this.cssGenerator.width.subscribe(width => this.width = width)
     this.cssGenerator.height.subscribe(height => this.height = height)
@@ -31,51 +36,60 @@ export class DimensionsComponent implements OnInit {
   }
 
   onWidthChange() {
-    this.cssGenerator.changeWidthInstance(this.width)
+    this.cssGenerator.changeWidthInstance(this.width);
   }
 
   onHeightChange() {
-    this.cssGenerator.changeHeightInstance(this.height)
+    this.cssGenerator.changeHeightInstance(this.height);
   }
 
   onLeftChange() {
-    this.cssGenerator.changeLeftInstance(this.left)
+    this.cssGenerator.changeLeftInstance(this.left);
   }
 
   onRightChange() {
-    this.cssGenerator.changeRightInstance(this.right)
+    this.cssGenerator.changeRightInstance(this.right);
+  }
+
+  onTopChange() {
+    this.cssGenerator.changeTopInstance(this.top);
+  }
+
+  onBottomChange() {
+    this.cssGenerator.changeBottomInstance(this.bottom);
   }
 
   getWidthDisabled() {
-    if (this.type == 'scalene') {
+    if (this.type == 'scalene' && !this.topDirections.includes(this.direction) && !this.leftRightDirections.includes(this.direction)) {
       return false;
     } else {
-      return null
+      return null;
     }
   }
 
   getHeightDisabled() {
-    if (this.type == 'equilateral') {
+    if (this.type == 'equilateral' || this.type == 'scalene' && this.leftRightDirections.includes(this.direction)) {
       return true;
     } else {
       return null;
     }
   }
 
-  getLeftDisabled() {
-    if (this.type == 'scalene') {
+  getLeftRightDisabled() {
+    if (this.type == 'scalene' && !this.topDirections.includes(this.direction) && !this.leftRightDirections.includes(this.direction)) {
       return null;
     } else {
       return true;
     }
   }
 
-  getRightDisabled() {
-    if (this.type == 'scalene') {
+  getTopBottomDisabled() {
+    if (this.type == 'scalene' && this.leftRightDirections.includes(this.direction)) {
       return null;
     } else {
       return true;
     }
   }
+
 
 }
