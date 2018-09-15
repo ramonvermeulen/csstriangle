@@ -84,7 +84,6 @@ export class CssGeneratorService {
     updateAll() {
         this.updateBorderWidth()
         this.updateBorderColor()
-        this.updateCssOutput()
     }
 
     updateBorderWidth() {
@@ -290,8 +289,5 @@ export class CssGeneratorService {
         }
     }
 
-    updateCssOutput() {
-        return;
-    }
 }
 
