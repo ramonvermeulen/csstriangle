@@ -1,0 +1,8 @@
+<div class="color-container">
+    <h4 class="color-title">Color</h4>
+    <div class="form-group row">
+        <div class="col-12">
+            <input [(colorPicker)]="color" [style.background]="color" (colorPickerChange)="onColorChange($event)" readonly/>
+        </div>
+    </div>
+</div>
