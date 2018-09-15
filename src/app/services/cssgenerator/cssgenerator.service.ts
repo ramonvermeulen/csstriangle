@@ -11,8 +11,8 @@ export class CssGeneratorService {
     private heightInstance = new BehaviorSubject<number>(150);
     private leftInstance = new BehaviorSubject<number>(75);
     private rightInstance = new BehaviorSubject<number>(75);
-    private topInstance = new BehaviorSubject<number>(50);
-    private bottomInstance = new BehaviorSubject<number>(50);
+    private topInstance = new BehaviorSubject<number>(75);
+    private bottomInstance = new BehaviorSubject<number>(75);
     private colorInstance = new BehaviorSubject<string>("#b42157")
 
     /* generated instances */
