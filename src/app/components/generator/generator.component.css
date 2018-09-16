@@ -22,3 +22,10 @@
     margin-right: 0;
     margin-left: 0;
 }
+
+@media only screen and (max-width: 992px) {
+    .col-xs-12 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    } 
+}

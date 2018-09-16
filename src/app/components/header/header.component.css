@@ -12,7 +12,7 @@
     font-family: AlegreyaSansSC, 'Courier New', Courier, monospace;
     line-height: 1;
     margin: 0;
-    font-size: 3.5rem;
+    font-size: 48px;
     font-weight: 1000;
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
@@ -25,7 +25,7 @@
     font-family: AlegreyaSansSC, 'Courier New', Courier, monospace;
     line-height: 1;
     margin: 0;
-    font-size: 1rem;
+    font-size: 18px;
     font-weight: 1000;
     color: #ffffff;
     margin: 10px;
@@ -33,4 +33,14 @@
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
+}
+
+@media only screen and (max-width: 992px) {
+    .header-title {
+        font-size: 28px;
+    }
+
+    .header-subtitle {
+        font-size: 14px;
+    }
 }
