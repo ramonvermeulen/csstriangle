@@ -141,17 +141,17 @@ export class CssGeneratorService {
                         break;
                     }
                     case "left": {
-                        top = (this.widthInstance.getValue() / 2).toFixed(1);
-                        right = (this.heightInstance.getValue()).toFixed(1);
-                        bottom = (this.widthInstance.getValue() / 2).toFixed(1);
+                        top = (this.heightInstance.getValue() / 2).toFixed(1);
+                        right = (this.widthInstance.getValue()).toFixed(1);
+                        bottom = (this.heightInstance.getValue() / 2).toFixed(1);
                         left = 0;
                         break;
                     }
                     case "right": {
-                        top = (this.widthInstance.getValue() / 2).toFixed(1);
+                        top = (this.heightInstance.getValue() / 2).toFixed(1);
                         right = 0
-                        bottom = (this.widthInstance.getValue() / 2).toFixed(1);
-                        left = (this.heightInstance.getValue()).toFixed(1);
+                        bottom = (this.heightInstance.getValue() / 2).toFixed(1);
+                        left = (this.widthInstance.getValue()).toFixed(1);
                         break;
                     }
                     case "top-right": {
