@@ -7,7 +7,7 @@ import { CssGeneratorService } from '../../../services/cssgenerator/cssgenerator
   styleUrls: ['./color.component.css']
 })
 export class ColorComponent implements OnInit {
-  private color: string;
+  public color: string;
 
   constructor(private cssGenerator: CssGeneratorService) { }
 

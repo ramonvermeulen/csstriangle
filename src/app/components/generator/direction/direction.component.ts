@@ -7,7 +7,7 @@ import { CssGeneratorService } from '../../../services/cssgenerator/cssgenerator
     styleUrls: ['./direction.component.css']
 })
 export class DirectionComponent implements OnInit {
-    private direction: string;
+    public direction: string;
 
     constructor(private cssGenerator: CssGeneratorService) { }
 
