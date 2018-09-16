@@ -1,0 +1,23 @@
+@font-face {
+    font-family: AlegreyaSansSC;
+    src: url(../../../../assets/fonts/AlegreyaSansSC-Thin.ttf);
+}
+
+.dimensions-container {
+    margin: 25px 10px 0px 10px;
+    font-family: AlegreyaSansSC!important;;
+    color: white;
+}
+
+.dimensions-title {
+    font-weight: 1000;
+}
+
+.col-9 input {
+    font-weight: 1000;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

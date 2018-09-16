@@ -1,0 +1,21 @@
+@font-face {
+    font-family: AlegreyaSansSC;
+    src: url(../../../../assets/fonts/AlegreyaSansSC-Thin.ttf);
+}
+
+
+.color-container {
+    margin: 25px 10px 0px 10px;
+    font-family: AlegreyaSansSC!important;;
+    color: white;
+}
+
+.color-title {
+    font-weight: 1000;
+}
+
+input {
+    height: 174px;
+    cursor: pointer;
+    border: none;
+}
