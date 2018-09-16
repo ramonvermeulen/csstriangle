@@ -11,8 +11,8 @@ export class CssGeneratorService {
     private heightInstance = new BehaviorSubject<number>(150);
     private leftInstance = new BehaviorSubject<number>(75);
     private rightInstance = new BehaviorSubject<number>(75);
-    private topInstance = new BehaviorSubject<number>(50);
-    private bottomInstance = new BehaviorSubject<number>(50);
+    private topInstance = new BehaviorSubject<number>(75);
+    private bottomInstance = new BehaviorSubject<number>(75);
     private colorInstance = new BehaviorSubject<string>("#b42157")
 
     /* generated instances */
@@ -84,7 +84,6 @@ export class CssGeneratorService {
     updateAll() {
         this.updateBorderWidth()
         this.updateBorderColor()
-        this.updateCssOutput()
     }
 
     updateBorderWidth() {
@@ -142,17 +141,17 @@ export class CssGeneratorService {
                         break;
                     }
                     case "left": {
-                        top = (this.widthInstance.getValue() / 2).toFixed(1);
-                        right = (this.heightInstance.getValue()).toFixed(1);
-                        bottom = (this.widthInstance.getValue() / 2).toFixed(1);
+                        top = (this.heightInstance.getValue() / 2).toFixed(1);
+                        right = (this.widthInstance.getValue()).toFixed(1);
+                        bottom = (this.heightInstance.getValue() / 2).toFixed(1);
                         left = 0;
                         break;
                     }
                     case "right": {
-                        top = (this.widthInstance.getValue() / 2).toFixed(1);
+                        top = (this.heightInstance.getValue() / 2).toFixed(1);
                         right = 0
-                        bottom = (this.widthInstance.getValue() / 2).toFixed(1);
-                        left = (this.heightInstance.getValue()).toFixed(1);
+                        bottom = (this.heightInstance.getValue() / 2).toFixed(1);
+                        left = (this.widthInstance.getValue()).toFixed(1);
                         break;
                     }
                     case "top-right": {
@@ -290,8 +289,5 @@ export class CssGeneratorService {
         }
     }
 
-    updateCssOutput() {
-        return;
-    }
 }
 

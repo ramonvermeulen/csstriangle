@@ -7,15 +7,15 @@ import { CssGeneratorService } from '../../../services/cssgenerator/cssgenerator
   styleUrls: ['./dimensions.component.css']
 })
 export class DimensionsComponent implements OnInit {
-  private type: string;
-  private direction: string;
+  public type: string;
+  public direction: string;
 
-  private width: number;
-  private height: number;
-  private left: number;
-  private right: number;
-  private top: number;
-  private bottom: number;
+  public width: number;
+  public height: number;
+  public left: number;
+  public right: number;
+  public top: number;
+  public bottom: number;
 
   private topDirections: Array<string> = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
   private leftRightDirections: Array<string> = ['left', 'right'];

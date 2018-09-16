@@ -7,7 +7,7 @@ import { CssGeneratorService } from '../../../services/cssgenerator/cssgenerator
     styleUrls: ['./type.component.css']
 })
 export class TypeComponent implements OnInit {
-    private type: string;
+    public type: string;
     private direction: string;
     private isosceles: Array<string> = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
 

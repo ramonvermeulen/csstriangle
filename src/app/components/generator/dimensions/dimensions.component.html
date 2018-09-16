@@ -3,37 +3,37 @@
     <div class="form-group row">
         <label for="example-number-input" class="col-3 col-form-label">Width</label>
         <div class="col-9">
-          <input [attr.disabled]="getWidthDisabled()" class="form-control" type="number" value="200" id="width-dimension" [(ngModel)]="width" (ngModelChange)="onWidthChange($event)">
+          <input [attr.disabled]="getWidthDisabled()" class="form-control" type="number" value="200" id="width-dimension" [(ngModel)]="width" (ngModelChange)="onWidthChange()">
         </div>
     </div>
     <div class="form-group row">
       <label for="example-number-input" class="col-3 col-form-label">Height</label>
       <div class="col-9">
-        <input [attr.disabled]="getHeightDisabled()" class="form-control" type="number" value="100" id="height-dimension" [(ngModel)]="height" (ngModelChange)="onHeightChange($event)">
+        <input [attr.disabled]="getHeightDisabled()" class="form-control" type="number" value="100" id="height-dimension" [(ngModel)]="height" (ngModelChange)="onHeightChange()">
       </div>
     </div>
     <div class="form-group row">
       <label for="example-number-input" class="col-3 col-form-label">Left</label>
       <div class="col-9">
-        <input [attr.disabled]="getLeftRightDisabled()" class="form-control" type="number" value="100" id="left-dimension" [(ngModel)]="left" (ngModelChange)="onLeftChange($event)">
+        <input [attr.disabled]="getLeftRightDisabled()" class="form-control" type="number" value="100" id="left-dimension" [(ngModel)]="left" (ngModelChange)="onLeftChange()">
       </div>
     </div>
     <div class="form-group row">
       <label for="example-number-input" class="col-3 col-form-label">Right</label>
       <div class="col-9">
-        <input [attr.disabled]="getLeftRightDisabled()" class="form-control" type="number" value="100" id="right-dimension" [(ngModel)]="right" (ngModelChange)="onRightChange($event)">
+        <input [attr.disabled]="getLeftRightDisabled()" class="form-control" type="number" value="100" id="right-dimension" [(ngModel)]="right" (ngModelChange)="onRightChange()">
       </div>
     </div>
     <div class="form-group row">
       <label for="example-number-input" class="col-3 col-form-label">Top</label>
       <div class="col-9">
-        <input [attr.disabled]="getTopBottomDisabled()" class="form-control" type="number" value="50" id="top-dimension" [(ngModel)]="top" (ngModelChange)="onTopChange($event)">
+        <input [attr.disabled]="getTopBottomDisabled()" class="form-control" type="number" value="50" id="top-dimension" [(ngModel)]="top" (ngModelChange)="onTopChange()">
       </div>
     </div>
     <div class="form-group row">
       <label for="example-number-input" class="col-3 col-form-label">Bottom</label>
       <div class="col-9">
-        <input [attr.disabled]="getTopBottomDisabled()" class="form-control" type="number" value="50" id="bottom-dimension" [(ngModel)]="bottom" (ngModelChange)="onBottomChange($event)">
+        <input [attr.disabled]="getTopBottomDisabled()" class="form-control" type="number" value="50" id="bottom-dimension" [(ngModel)]="bottom" (ngModelChange)="onBottomChange()">
       </div>
     </div>
 </div>
