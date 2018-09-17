@@ -23,6 +23,10 @@
     margin-left: 0;
 }
 
+.first-row {
+    min-height: 300px;
+}
+
 @media only screen and (max-width: 992px) {
     .col-xs-12 {
         padding-top: 10px;

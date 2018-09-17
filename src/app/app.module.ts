@@ -14,6 +14,7 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { ColorComponent } from './components/generator/color/color.component';
 import { VisualPreviewComponent } from './components/generator/visual-preview/visual-preview.component';
 import { CodePreviewComponent } from './components/generator/code-preview/code-preview.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CodePreviewComponent } from './components/generator/code-preview/code-p
     DimensionsComponent,
     ColorComponent,
     VisualPreviewComponent,
-    CodePreviewComponent
+    CodePreviewComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
