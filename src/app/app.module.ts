@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms'
 /* external library imports */
 import { ColorPickerModule } from 'ngx-color-picker';
 import { ClipboardModule } from 'ngx-clipboard';
+import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -35,7 +36,12 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserModule,
     FormsModule,
     ColorPickerModule,
-    ClipboardModule
+    ClipboardModule,
+    ToastNoAnimationModule.forRoot({
+      preventDuplicates: true,
+      closeButton: true,
+      progressBar: true
+    }) /* Overrides default angular toastr component */
   ],
   providers: [],
   bootstrap: [AppComponent]
