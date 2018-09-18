@@ -1,11 +1,6 @@
-@font-face {
-    font-family: AlegreyaSansSC;
-    src: url(../../../../assets/fonts/AlegreyaSansSC-Thin.ttf);
-}
-
 .type-container {
     margin: 0px 10px 0px 10px;
-    font-family: AlegreyaSansSC!important;;
+    font-family: Roboto!important;;
     color: white;
 }
 
@@ -22,4 +17,9 @@
 
 .custom-radio label {
     cursor: pointer;
+}
+
+.custom-radio .custom-control-input:checked~.custom-control-label::before {
+    box-shadow: unset;
+    background-color: rgba(240, 128, 60, 1);
 }

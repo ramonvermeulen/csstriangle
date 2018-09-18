@@ -1,5 +1,6 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CssGeneratorService } from '../../../services/cssgenerator/cssgenerator.service';
+import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'code-preview-component',
@@ -7,12 +8,14 @@ import { CssGeneratorService } from '../../../services/cssgenerator/cssgenerator
   styleUrls: ['./code-preview.component.css']
 })
 export class CodePreviewComponent implements OnInit {
+  @ViewChild(ToastContainerDirective) toastContainer: ToastContainerDirective;
   private borderColor: string;
   private borderWidth: string;
   
-  constructor(private cssGenerator: CssGeneratorService) { }
+  constructor(private cssGenerator: CssGeneratorService, private toastrService: ToastrService) { }
 
   ngOnInit() {
+    this.toastrService.overlayContainer = this.toastContainer
     this.cssGenerator.borderColor.subscribe(borderColor => this.borderColor = borderColor)
     this.cssGenerator.borderWidth.subscribe(borderWidth => this.borderWidth = borderWidth)
   }
@@ -32,6 +35,12 @@ export class CodePreviewComponent implements OnInit {
     }
     codePreview += '}'
     return codePreview
+  }
+
+  onCopyToClipboardSucces() {
+    this.toastrService.success('Successfully copied the CSS code to you clipboard!', 'Awesome!', {
+      timeOut: 4000
+    })
   }
 
 }

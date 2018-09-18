@@ -13,7 +13,7 @@ export class CssGeneratorService {
     private rightInstance = new BehaviorSubject<number>(75);
     private topInstance = new BehaviorSubject<number>(75);
     private bottomInstance = new BehaviorSubject<number>(75);
-    private colorInstance = new BehaviorSubject<string>("rgba(180, 33, 87, 1)")
+    private colorInstance = new BehaviorSubject<string>("rgba(240, 128, 60, 1)")
 
     /* generated instances */
     private borderWidthInstance = new BehaviorSubject<string>("0 75px 129.9px 75px")

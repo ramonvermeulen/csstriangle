@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-color: #3a4a5e;
+    background-color: #310D20;
 }
 
-.header-title {
-    color: #ffffff;
-    margin: 1.2rem;
+@font-face {
+    font-family: Roboto;
+    src: url(./assets/fonts/Roboto-Regular.ttf);
+}
+
+/* toastr overwrites */
+.toast-container .toast {
+    box-shadow: unset!important;
 }
