@@ -1,15 +1,10 @@
-@font-face {
-    font-family: AlegreyaSansSC;
-    src: url(../../../assets/fonts/AlegreyaSansSC-Thin.ttf);
-}
-
 .header-title-container {
     margin: 10px;
 }
 
 .header-title {
     text-align: center;
-    font-family: AlegreyaSansSC, 'Courier New', Courier, monospace;
+    font-family: Roboto, 'Courier New', Courier, monospace;
     line-height: 1;
     margin: 0;
     font-size: 40px;
@@ -18,15 +13,16 @@
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
+    color: #ffffff;
 }
 
 .header-subtitle {
     text-align: center;
-    font-family: AlegreyaSansSC, 'Courier New', Courier, monospace;
+    font-family: Roboto, 'Courier New', Courier, monospace;
     line-height: 1;
     margin: 0;
     font-size: 16px;
-    font-weight: 1000;
+    font-weight: 500;
     color: #ffffff;
     margin: 10px;
     -webkit-user-select: none; /* Safari */        

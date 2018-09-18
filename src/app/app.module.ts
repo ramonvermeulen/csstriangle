@@ -39,8 +39,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ClipboardModule,
     ToastNoAnimationModule.forRoot({
       preventDuplicates: true,
-      closeButton: true,
-      progressBar: true
+      closeButton: true
     }) /* Overrides default angular toastr component */
   ],
   providers: [],

@@ -1,40 +1,74 @@
 <div class="dimensions-container">
   <!-- TODO fix number scroll -->
     <h4 class="dimensions-title">Dimensions</h4>
-    <div class="form-group row">
-        <label for="width-dimension" class="col-3 col-form-label">Width</label>
-        <div class="col-9">
-          <input [attr.disabled]="getWidthDisabled()" class="form-control" type="number" value="200" id="width-dimension" name="width-dimension" [(ngModel)]="width" (ngModelChange)="onWidthChange()">
-        </div>
-    </div>
-    <div class="form-group row">
-      <label for="height-dimension" class="col-3 col-form-label">Height</label>
-      <div class="col-9">
-        <input [attr.disabled]="getHeightDisabled()" class="form-control" type="number" value="100" id="height-dimension" name="height-dimension" [(ngModel)]="height" (ngModelChange)="onHeightChange()">
+    <div class="row">
+      <div class="form-group">
+          <label for="width-dimension" class="col-3 col-form-label">Width</label>
+          <div class="col-9">
+            <input [attr.disabled]="getWidthDisabled()" class="form-control" type="number" value="200" id="width-dimension" name="width-dimension" [(ngModel)]="width" (ngModelChange)="onWidthChange()">
+          </div>
       </div>
-    </div>
-    <div class="form-group row">
+      <div class="form-group">
+        <label for="height-dimension" class="col-3 col-form-label">Height</label>
+        <div class="col-9">
+          <input [attr.disabled]="getHeightDisabled()" class="form-control" type="number" value="100" id="height-dimension" name="height-dimension" [(ngModel)]="height" (ngModelChange)="onHeightChange()">
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
       <label for="left-dimension" class="col-3 col-form-label">Left</label>
       <div class="col-9">
         <input [attr.disabled]="getLeftRightDisabled()" class="form-control" type="number" value="100" id="left-dimension" name="left-dimension" [(ngModel)]="left" (ngModelChange)="onLeftChange()">
       </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group">
       <label for="right-dimension" class="col-3 col-form-label">Right</label>
       <div class="col-9">
         <input [attr.disabled]="getLeftRightDisabled()" class="form-control" type="number" value="100" id="right-dimension" name="right-dimension" [(ngModel)]="right" (ngModelChange)="onRightChange()">
       </div>
     </div>
-    <div class="form-group row">
+  </div>
+    <div class="row">
+    <div class="form-group">
       <label for="top-dimension" class="col-3 col-form-label">Top</label>
       <div class="col-9">
         <input [attr.disabled]="getTopBottomDisabled()" class="form-control" type="number" value="50" id="top-dimension" name="top-dimension" [(ngModel)]="top" (ngModelChange)="onTopChange()">
       </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group">
       <label for="bottom-dimension" class="col-3 col-form-label">Bottom</label>
       <div class="col-9">
         <input [attr.disabled]="getTopBottomDisabled()" class="form-control" type="number" value="50" id="bottom-dimension" name="bottom-dimension" [(ngModel)]="bottom" (ngModelChange)="onBottomChange()">
       </div>
     </div>
 </div>
+</div>
+<script>
+  $(function() {
+    $('#width-dimension').on("mousewheel", function(event) {
+        event.preventDefault();
+        $this = $(this);
+        $inc = parseFloat($this.attr('step'));
+        $max = parseFloat($this.attr('max'));
+        $min = parseFloat($this.attr('min'));
+        $currVal = parseFloat($this.val());
+
+        // If blank, assume value of 0
+        if (isNaN($currVal)) {
+            $currVal = 0.0;
+        }
+
+        // Increment or decrement numeric based on scroll distance
+        if (event.deltaFactor * event.deltaY > 0) {
+            if ($currVal + $inc <= $max) {
+                $this.val($currVal + $inc);
+            }
+        } else {
+            if ($currVal - $inc >= $min) {
+                $this.val($currVal - $inc);
+            }
+        }
+    });
+});
+</script>

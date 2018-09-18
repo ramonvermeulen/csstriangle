@@ -38,7 +38,7 @@ export class CodePreviewComponent implements OnInit {
   }
 
   onCopyToClipboardSucces() {
-    this.toastrService.success('Successfully copied styles to you clipboard!', 'Awesome!', {
+    this.toastrService.success('Successfully copied the CSS code to you clipboard!', 'Awesome!', {
       timeOut: 4000
     })
   }
