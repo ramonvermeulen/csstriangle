@@ -1,8 +1,14 @@
 <div class="code-preview-container">
-    <h4 class="code-preview-title">Code Preview</h4>
+    <h4 class="code-preview-title">Generated CSS code</h4>
     <div class="form-group row">
         <div class="col-12">
             <textarea class="code-preview" style="width: 100%; height: 250px;" readonly>{{getCodePreview()}}</textarea>
+            <div class="row generated-css-options">
+                <button class="btn" ngxClipboard (cbOnSuccess)="onCopyToClipboardSucces()" [cbContent]="getCodePreview().toString()">Copy to clipboard</button>
+                <div class="visual-preview-undertext">
+                        Put a <strong>&lt;div class="triangle"&gt;&lt;div&gt;</strong> in your HTML file
+                </div>
+            </div>
         </div>
     </div>
 </div>
