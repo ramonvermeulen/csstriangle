@@ -2,9 +2,10 @@
     <h4 class="code-preview-title">Generated CSS code</h4>
     <div class="form-group row">
         <div class="col-12">
-            <textarea class="code-preview" style="width: 100%; height: 250px;" readonly>{{getCodePreview()}}</textarea>
+            <textarea class="code-preview" readonly>{{getCodePreview()}}</textarea>
             <div class="row generated-css-options">
-                <button class="btn" ngxClipboard (cbOnSuccess)="onCopyToClipboardSucces()" [cbContent]="getCodePreview().toString()">Copy to clipboard</button>
+                <button class="btn copy" ngxClipboard (cbOnSuccess)="onCopyToClipboardSucces()" [cbContent]="getCodePreview().toString()">Copy to clipboard</button>
+                <button class="btn about" data-toggle="modal" data-target=".about-modal">About</button>
                 <div class="visual-preview-undertext">
                         Put a <strong>&lt;div class="triangle"&gt;&lt;div&gt;</strong> in your HTML file
                 </div>
@@ -12,3 +13,22 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade about-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">About CSS Triangle Generator</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>CSS Triangle Generator started off as a personal freetime summer project to get more familiar with the Angular 6 framework. After I finished the project I thought it was nice to put it online so other people globally could make use of it.</p>
+            <p>The main goal of CSS Triangle Generator is to provide an easy to use interface which generates CSS code for a triangle. To use the generated triangle on your own website or application all you have to do is put a <strong>&lt;div class="triangle"&gt;&lt;div&gt;</strong> in your HTML file and copy / paste the generated CSS code into your stylesheet.</p>
+            <p>If you walk into any bugs or if you have any suggestions, please submit an issue through github or feel free to mail me at the e-mail address below.</p>
+            <p>Source code: <a href="https://www.github.com/ramonvermeulen/csstriangle" target="_blank"><strong>github</strong></a><br>Contact: <a href="mailto:info@csstriangle.com"><strong>info@csstriangle.com</strong></a></p>
+          </div>
+      </div>
+    </div>
+  </div>

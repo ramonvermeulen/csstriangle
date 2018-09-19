@@ -8,6 +8,7 @@ import { CssGeneratorService } from '../../../services/cssgenerator/cssgenerator
 })
 export class ColorComponent implements OnInit {
   public color: string;
+  public rgb: boolean = true;
 
   constructor(private cssGenerator: CssGeneratorService) { }
 

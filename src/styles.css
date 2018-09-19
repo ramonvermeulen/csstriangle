@@ -12,3 +12,7 @@ body {
 .toast-container .toast {
     box-shadow: unset!important;
 }
+
+h4 {
+    user-select: none;
+}
