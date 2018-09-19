@@ -9,7 +9,7 @@ import { CssGeneratorService } from '../../../services/cssgenerator/cssgenerator
 export class TypeComponent implements OnInit {
     public type: string;
     private direction: string;
-    private isosceles: Array<string> = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
+    private rightAngled: Array<string> = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
 
 
     constructor(private cssGenerator: CssGeneratorService) { }
@@ -23,11 +23,13 @@ export class TypeComponent implements OnInit {
         this.cssGenerator.changeTypeInstance(this.type)
     }
 
-    isEquilateralEnabled() {
-        if(this.isosceles.includes(this.direction)) {
-            this.type = (this.type === 'equilateral') ? 'isosceles' : this.type = this.type;
+    isEquilateralIsoscelesScalaneEnabled() {
+        if(this.rightAngled.includes(this.direction)) {
+            this.type = 'right-angled'
             this.onTypeChange();
-            return false;
+            return null;
+        } else {
+            this.type = (this.type === 'right-angled') ? 'equilateral' : this.type = this.type;
         }
         return true;
     }

@@ -89,167 +89,183 @@ export class CssGeneratorService {
     updateBorderWidth() {
         switch(this.typeInstance.getValue()) {
             case "equilateral": {
-                var top, right, bottom, left;
-                switch(this.directionInstance.getValue()){
-                    case "top": {
-                        top = 0;
-                        right = (this.widthInstance.getValue() / 2).toFixed(1);
-                        bottom = (Math.sqrt(3)/2 * this.widthInstance.getValue()).toFixed(1);
-                        left = (this.widthInstance.getValue() / 2).toFixed(1);
-                        break;
-                    }
-                    case "bottom": {
-                        top = (Math.sqrt(3)/2 * this.widthInstance.getValue()).toFixed(1);
-                        right = (this.widthInstance.getValue() / 2).toFixed(1);
-                        bottom = 0;
-                        left = (this.widthInstance.getValue() / 2).toFixed(1);
-                        break;
-                    }
-                    case "left": {
-                        top = (this.widthInstance.getValue() / 2).toFixed(1);
-                        right = (this.widthInstance.getValue()).toFixed(1);
-                        bottom = (this.widthInstance.getValue() / 2).toFixed(1);
-                        left = 0;
-                        break;
-                    }
-                    case "right": {
-                        top = (this.widthInstance.getValue() / 2).toFixed(1);
-                        right = 0
-                        bottom = (this.widthInstance.getValue() / 2).toFixed(1);
-                        left = (this.widthInstance.getValue()).toFixed(1);
-                        break;
-                    }
-                }
-                this.borderWidthInstance.next(`${top}px ${right}px ${bottom}px ${left}px`)
+                this.equilateral();
                 break;
             }
             case "isosceles": {
-                var top, right, bottom, left
-                switch(this.directionInstance.getValue()){
-                    case "top": {
-                        top = 0;
-                        right = (this.widthInstance.getValue() / 2).toFixed(1);
-                        bottom = this.heightInstance.getValue().toFixed(1)
-                        left = (this.widthInstance.getValue() / 2).toFixed(1);
-                        break;
-                    }
-                    case "bottom": {
-                        top = (this.heightInstance.getValue()).toFixed(1);
-                        right = (this.widthInstance.getValue() / 2).toFixed(1);
-                        bottom = 0;
-                        left = (this.widthInstance.getValue() / 2).toFixed(1);
-                        break;
-                    }
-                    case "left": {
-                        top = (this.heightInstance.getValue() / 2).toFixed(1);
-                        right = (this.widthInstance.getValue()).toFixed(1);
-                        bottom = (this.heightInstance.getValue() / 2).toFixed(1);
-                        left = 0;
-                        break;
-                    }
-                    case "right": {
-                        top = (this.heightInstance.getValue() / 2).toFixed(1);
-                        right = 0
-                        bottom = (this.heightInstance.getValue() / 2).toFixed(1);
-                        left = (this.widthInstance.getValue()).toFixed(1);
-                        break;
-                    }
-                    case "top-right": {
-                        top = 0;
-                        right = (this.widthInstance.getValue()).toFixed(1);
-                        bottom = (this.heightInstance.getValue()).toFixed(1);
-                        left = 0;
-                        break;
-                    }
-                    case "top-left": {
-                        top = (this.heightInstance.getValue()).toFixed(1);
-                        right = (this.widthInstance.getValue()).toFixed(1);
-                        bottom = 0;
-                        left = 0;
-                        break;
-                    }
-                    case "bottom-left": {
-                        top = (this.heightInstance.getValue()).toFixed(1);
-                        right = 0;
-                        bottom = 0;
-                        left = (this.widthInstance.getValue()).toFixed(1);
-                        break;
-                    }
-                    case "bottom-right": {
-                        top = 0;
-                        right = 0;
-                        bottom = (this.heightInstance.getValue()).toFixed(1);
-                        left = (this.widthInstance.getValue()).toFixed(1);
-                        break;
-                    }
-                }
-                this.borderWidthInstance.next(`${top}px ${right}px ${bottom}px ${left}px`)
+                this.isoscelesAndRightAngled();
+                break;
+            }
+            case "right-angled": {
+                this.isoscelesAndRightAngled();
                 break;
             }
             case "scalene": {
-                var top, right, bottom, left
-                switch(this.directionInstance.getValue()){
-                    case "top": {
-                        top = 0;
-                        right = (this.rightInstance.getValue()).toFixed(1);
-                        bottom = (this.heightInstance.getValue()).toFixed(1);
-                        left = (this.leftInstance.getValue()).toFixed(1);
-                        break;
-                    }
-                    case "bottom": {
-                        top = (this.heightInstance.getValue()).toFixed(1);
-                        right = (this.rightInstance.getValue()).toFixed(1);
-                        bottom = 0;
-                        left = (this.leftInstance.getValue()).toFixed(1);
-                        break;
-                    }
-                    case "left": {
-                        top = (this.topInstance.getValue()).toFixed(1);
-                        right = (this.widthInstance.getValue()).toFixed(1);
-                        bottom = (this.bottomInstance.getValue()).toFixed(1);
-                        left = 0;
-                        break;
-                    }
-                    case "right": {
-                        top = (this.topInstance.getValue()).toFixed(1);
-                        right = 0
-                        bottom = (this.bottomInstance.getValue()).toFixed(1);
-                        left = (this.widthInstance.getValue()).toFixed(1);
-                        break;
-                    }
-                    case "top-right": {
-                        top = 0;
-                        right = (this.widthInstance.getValue()).toFixed(1);
-                        bottom = (this.heightInstance.getValue()).toFixed(1);
-                        left = 0;
-                        break;
-                    }
-                    case "top-left": {
-                        top = (this.heightInstance.getValue()).toFixed(1);
-                        right = (this.widthInstance.getValue()).toFixed(1);
-                        bottom = 0;
-                        left = 0;
-                        break;
-                    }
-                    case "bottom-left": {
-                        top = (this.heightInstance.getValue()).toFixed(1);
-                        right = 0;
-                        bottom = 0;
-                        left = (this.widthInstance.getValue()).toFixed(1);
-                        break;
-                    }
-                    case "bottom-right": {
-                        top = 0;
-                        right = 0;
-                        bottom = (this.heightInstance.getValue()).toFixed(1);
-                        left = (this.widthInstance.getValue()).toFixed(1);
-                        break;
-                    }
-                }
-                this.borderWidthInstance.next(`${top}px ${right}px ${bottom}px ${left}px`)
+                this.scalene();
                 break;
             }
         }
+    }
+
+    equilateral() {
+        var top, right, bottom, left;
+        switch(this.directionInstance.getValue()){
+            case "top": {
+                top = 0;
+                right = (this.widthInstance.getValue() / 2).toFixed(1);
+                bottom = (Math.sqrt(3)/2 * this.widthInstance.getValue()).toFixed(1);
+                left = (this.widthInstance.getValue() / 2).toFixed(1);
+                break;
+            }
+            case "bottom": {
+                top = (Math.sqrt(3)/2 * this.widthInstance.getValue()).toFixed(1);
+                right = (this.widthInstance.getValue() / 2).toFixed(1);
+                bottom = 0;
+                left = (this.widthInstance.getValue() / 2).toFixed(1);
+                break;
+            }
+            case "left": {
+                top = (this.widthInstance.getValue() / 2).toFixed(1);
+                right = (this.widthInstance.getValue()).toFixed(1);
+                bottom = (this.widthInstance.getValue() / 2).toFixed(1);
+                left = 0;
+                break;
+            }
+            case "right": {
+                top = (this.widthInstance.getValue() / 2).toFixed(1);
+                right = 0
+                bottom = (this.widthInstance.getValue() / 2).toFixed(1);
+                left = (this.widthInstance.getValue()).toFixed(1);
+                break;
+            }
+        }
+        this.borderWidthInstance.next(`${top}${(top === 0) ? '' : 'px'} ${right}${(right === 0) ? '' : 'px'} ${bottom}${(bottom === 0) ? '' : 'px'} ${left}${(left === 0) ? '' : 'px'}`)
+    }
+
+    isoscelesAndRightAngled() {
+        var top, right, bottom, left
+        switch(this.directionInstance.getValue()){
+            case "top": {
+                top = 0;
+                right = (this.widthInstance.getValue() / 2).toFixed(1);
+                bottom = this.heightInstance.getValue().toFixed(1)
+                left = (this.widthInstance.getValue() / 2).toFixed(1);
+                break;
+            }
+            case "bottom": {
+                top = (this.heightInstance.getValue()).toFixed(1);
+                right = (this.widthInstance.getValue() / 2).toFixed(1);
+                bottom = 0;
+                left = (this.widthInstance.getValue() / 2).toFixed(1);
+                break;
+            }
+            case "left": {
+                top = (this.heightInstance.getValue() / 2).toFixed(1);
+                right = (this.widthInstance.getValue()).toFixed(1);
+                bottom = (this.heightInstance.getValue() / 2).toFixed(1);
+                left = 0;
+                break;
+            }
+            case "right": {
+                top = (this.heightInstance.getValue() / 2).toFixed(1);
+                right = 0
+                bottom = (this.heightInstance.getValue() / 2).toFixed(1);
+                left = (this.widthInstance.getValue()).toFixed(1);
+                break;
+            }
+            case "top-right": {
+                top = 0;
+                right = (this.widthInstance.getValue()).toFixed(1);
+                bottom = (this.heightInstance.getValue()).toFixed(1);
+                left = 0;
+                break;
+            }
+            case "top-left": {
+                top = (this.heightInstance.getValue()).toFixed(1);
+                right = (this.widthInstance.getValue()).toFixed(1);
+                bottom = 0;
+                left = 0;
+                break;
+            }
+            case "bottom-left": {
+                top = (this.heightInstance.getValue()).toFixed(1);
+                right = 0;
+                bottom = 0;
+                left = (this.widthInstance.getValue()).toFixed(1);
+                break;
+            }
+            case "bottom-right": {
+                top = 0;
+                right = 0;
+                bottom = (this.heightInstance.getValue()).toFixed(1);
+                left = (this.widthInstance.getValue()).toFixed(1);
+                break;
+            }
+        }
+        this.borderWidthInstance.next(`${top}${(top === 0) ? '' : 'px'} ${right}${(right === 0) ? '' : 'px'} ${bottom}${(bottom === 0) ? '' : 'px'} ${left}${(left === 0) ? '' : 'px'}`)
+    }
+
+    scalene() {
+        var top, right, bottom, left
+        switch(this.directionInstance.getValue()){
+            case "top": {
+                top = 0;
+                right = (this.rightInstance.getValue()).toFixed(1);
+                bottom = (this.heightInstance.getValue()).toFixed(1);
+                left = (this.leftInstance.getValue()).toFixed(1);
+                break;
+            }
+            case "bottom": {
+                top = (this.heightInstance.getValue()).toFixed(1);
+                right = (this.rightInstance.getValue()).toFixed(1);
+                bottom = 0;
+                left = (this.leftInstance.getValue()).toFixed(1);
+                break;
+            }
+            case "left": {
+                top = (this.topInstance.getValue()).toFixed(1);
+                right = (this.widthInstance.getValue()).toFixed(1);
+                bottom = (this.bottomInstance.getValue()).toFixed(1);
+                left = 0;
+                break;
+            }
+            case "right": {
+                top = (this.topInstance.getValue()).toFixed(1);
+                right = 0
+                bottom = (this.bottomInstance.getValue()).toFixed(1);
+                left = (this.widthInstance.getValue()).toFixed(1);
+                break;
+            }
+            case "top-right": {
+                top = 0;
+                right = (this.widthInstance.getValue()).toFixed(1);
+                bottom = (this.heightInstance.getValue()).toFixed(1);
+                left = 0;
+                break;
+            }
+            case "top-left": {
+                top = (this.heightInstance.getValue()).toFixed(1);
+                right = (this.widthInstance.getValue()).toFixed(1);
+                bottom = 0;
+                left = 0;
+                break;
+            }
+            case "bottom-left": {
+                top = (this.heightInstance.getValue()).toFixed(1);
+                right = 0;
+                bottom = 0;
+                left = (this.widthInstance.getValue()).toFixed(1);
+                break;
+            }
+            case "bottom-right": {
+                top = 0;
+                right = 0;
+                bottom = (this.heightInstance.getValue()).toFixed(1);
+                left = (this.widthInstance.getValue()).toFixed(1);
+                break;
+            }
+        }
+        this.borderWidthInstance.next(`${top}${(top === 0) ? '' : 'px'} ${right}${(right === 0) ? '' : 'px'} ${bottom}${(bottom === 0) ? '' : 'px'} ${left}${(left === 0) ? '' : 'px'}`)
     }
 
     updateBorderColor() {

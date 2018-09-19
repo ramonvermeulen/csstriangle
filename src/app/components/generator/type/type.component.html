@@ -1,21 +1,28 @@
 <div class="type-container">
     <h4 class="type-title">Type</h4>
-    <div class="custom-control custom-radio" *ngIf="isEquilateralEnabled()">
+    <div class="custom-control custom-radio" *ngIf="isEquilateralIsoscelesScalaneEnabled()">
         <input type="radio" value="equilateral" id="equilateral" class="custom-control-input" name="type" [(ngModel)]="type" (ngModelChange)="onTypeChange()">
         <label class="custom-control-label" for="equilateral">
             Equilateral
         </label>
     </div>
-    <div class="custom-control custom-radio">
+    <div class="custom-control custom-radio" *ngIf="isEquilateralIsoscelesScalaneEnabled()">
         <input type="radio" value="isosceles" id="isosceles" class="custom-control-input" name="type" [(ngModel)]="type" (ngModelChange)="onTypeChange()">
         <label class="custom-control-label" for="isosceles">
             Isosceles
         </label>
     </div>
-    <div class="custom-control custom-radio">
+    <div class="custom-control custom-radio" *ngIf="isEquilateralIsoscelesScalaneEnabled()">
         <input type="radio" value="scalene" id="scalene" class="custom-control-input" name="type" [(ngModel)]="type" (ngModelChange)="onTypeChange()">
         <label class="custom-control-label" for="scalene">
             Scalene
+        </label>
+    </div>
+    <div class="custom-control custom-radio">
+        <input type="radio" value="right-angled" id="right-angled" class="custom-control-input" name="type" [(ngModel)]="type" (ngModelChange)="onTypeChange()" 
+        [attr.disabled]="isEquilateralIsoscelesScalaneEnabled()">
+        <label class="custom-control-label" for="right-angled">
+            Right-angled
         </label>
     </div>
 </div>
