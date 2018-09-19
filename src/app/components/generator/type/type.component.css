@@ -23,3 +23,10 @@
     box-shadow: unset;
     background-color: rgba(240, 128, 60, 1);
 }
+
+.custom-control-input:disabled~.custom-control-label::before {
+    background-color: rgb(117, 117, 117);
+    transition: 500ms;
+    -webkit-transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
