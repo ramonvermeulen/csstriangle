@@ -4,8 +4,8 @@
         <div class="col-12">
             <textarea class="code-preview" readonly>{{getCodePreview()}}</textarea>
             <div class="row generated-css-options">
-                <button class="btn copy" ngxClipboard (cbOnSuccess)="onCopyToClipboardSucces()" [cbContent]="getCodePreview().toString()">Copy to clipboard</button>
-                <button class="btn about" data-toggle="modal" data-target=".about-modal">About</button>
+                <button class="btn copy" ngxClipboard title="Copy to clipboard" (cbOnSuccess)="onCopyToClipboardSucces()" [cbContent]="getCodePreview().toString()">Copy to clipboard</button>
+                <button class="btn about" title="About CSS Triangle Generator" data-toggle="modal" data-target=".about-modal">About</button>
                 <div class="visual-preview-undertext">
                         Put a <strong>&lt;div class="triangle"&gt;&lt;div&gt;</strong> in your HTML file
                 </div>
