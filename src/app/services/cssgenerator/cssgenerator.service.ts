@@ -86,6 +86,18 @@ export class CssGeneratorService {
         this.updateBorderColor()
     }
 
+    escapePixelChars(input: string) {
+        let inputList = input.split(' ')
+        let index = 0
+        for(let item of inputList) {
+            if(item == '0px' || item == '0.0px'){
+                inputList[index] = '0'
+            }
+            index += 1
+        }
+        return inputList.join(' ')
+    }
+
     updateBorderWidth() {
         switch(this.typeInstance.getValue()) {
             case "equilateral": {
@@ -139,7 +151,7 @@ export class CssGeneratorService {
                 break;
             }
         }
-        this.borderWidthInstance.next(`${top}${(top === 0) ? '' : 'px'} ${right}${(right === 0) ? '' : 'px'} ${bottom}${(bottom === 0) ? '' : 'px'} ${left}${(left === 0) ? '' : 'px'}`)
+        this.borderWidthInstance.next(this.escapePixelChars(`${top}px ${right}px ${bottom}px ${left}px`))
     }
 
     isoscelesAndRightAngled() {
@@ -202,7 +214,7 @@ export class CssGeneratorService {
                 break;
             }
         }
-        this.borderWidthInstance.next(`${top}${(top === 0) ? '' : 'px'} ${right}${(right === 0) ? '' : 'px'} ${bottom}${(bottom === 0) ? '' : 'px'} ${left}${(left === 0) ? '' : 'px'}`)
+        this.borderWidthInstance.next(this.escapePixelChars(`${top}px ${right}px ${bottom}px ${left}px`))        
     }
 
     scalene() {
@@ -265,7 +277,7 @@ export class CssGeneratorService {
                 break;
             }
         }
-        this.borderWidthInstance.next(`${top}${(top === 0) ? '' : 'px'} ${right}${(right === 0) ? '' : 'px'} ${bottom}${(bottom === 0) ? '' : 'px'} ${left}${(left === 0) ? '' : 'px'}`)
+        this.borderWidthInstance.next(this.escapePixelChars(`${top}px ${right}px ${bottom}px ${left}px`))
     }
 
     updateBorderColor() {

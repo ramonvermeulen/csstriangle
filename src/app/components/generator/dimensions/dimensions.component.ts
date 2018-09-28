@@ -36,27 +36,37 @@ export class DimensionsComponent implements OnInit {
   }
 
   onWidthChange() {
-    this.cssGenerator.changeWidthInstance(this.width);
+    this.cssGenerator.changeWidthInstance(this.checkForNullAndMaxValues(this.width));
   }
 
   onHeightChange() {
-    this.cssGenerator.changeHeightInstance(this.height);
+    this.cssGenerator.changeHeightInstance(this.checkForNullAndMaxValues(this.height));
   }
 
   onLeftChange() {
-    this.cssGenerator.changeLeftInstance(this.left);
+    this.cssGenerator.changeLeftInstance(this.checkForNullAndMaxValues(this.left));
   }
 
   onRightChange() {
-    this.cssGenerator.changeRightInstance(this.right);
+    this.cssGenerator.changeRightInstance(this.checkForNullAndMaxValues(this.right));
   }
 
   onTopChange() {
-    this.cssGenerator.changeTopInstance(this.top);
+    this.cssGenerator.changeTopInstance(this.checkForNullAndMaxValues(this.top));
   }
 
   onBottomChange() {
-    this.cssGenerator.changeBottomInstance(this.bottom);
+    this.cssGenerator.changeBottomInstance(this.checkForNullAndMaxValues(this.bottom));
+  }
+
+  checkForNullAndMaxValues(value) {
+    if(value == null) {
+      return '0';
+    }
+    if(parseFloat(value) > 500) {
+      return 500;
+    }
+    return value;
   }
 
   getWidthDisabled() {
