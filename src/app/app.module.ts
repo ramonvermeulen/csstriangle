@@ -1,3 +1,5 @@
+import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
@@ -32,8 +34,11 @@ import { FooterComponent } from './components/footer/footer.component';
     CodePreviewComponent,
     FooterComponent
   ],
-  imports: [
-    BrowserModule,
+  imports:[
+ CommonModule,
+NgtUniversalModule,
+ 
+    
     FormsModule,
     ColorPickerModule,
     ClipboardModule,
@@ -43,6 +48,5 @@ import { FooterComponent } from './components/footer/footer.component';
     }) /* Overrides default angular toastr component */
   ],
   providers: [],
-  bootstrap: [AppComponent]
 })
 export class AppModule { }
