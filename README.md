@@ -1,8 +1,8 @@
 # Csstriangle
 
-Recently bought this domain to host a project on which I will develop in the summer of 2018.
+Code content of https://www.csstriangle.com
+
 -----
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
 
 ## Development server
 
@@ -19,13 +19,10 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 After build, add the google scripts to the head of the index.html
 After build, add the ad scripts to the footer component
 
-## Running unit tests
+## Universal build
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `npm run build:server:prod` and the server files wil build into /dist/server.js and /dist/server/*
+Move the dist folder + prod.js to the root directory of your http server
 
 ## Further help
 
